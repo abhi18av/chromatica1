@@ -4,8 +4,12 @@
   :license {:name "Eclipse Public License"
             :url "http://www.eclipse.org/legal/epl-v10.html"}
 
-  :dependencies [[org.clojure/clojure "1.8.0"]
-                 [org.clojure/clojurescript "1.9.671" :scope "provided"]
+  :dependencies [
+
+
+  				 [org.clojure/clojure "1.9.0-beta1"]
+                 [org.clojure/clojurescript "1.9.908" :scope "provided"]
+                 
                  [com.cognitect/transit-clj "0.8.300"]
                  [ring "1.6.2"]
                  [ring/ring-defaults "0.3.1"]
@@ -42,7 +46,28 @@
   :repl-options {:init-ns user}
 
   :cljsbuild {:builds
-              [{:id "app"
+              [
+
+                {:id "nodejs"
+                :source-paths ["src/nodejs"]
+                :compiler {:main chromatica1.core
+                           :target :nodejs
+                             ;:asset-path "js/compiled/out"
+                           :output-to "resources/public/nodejs/compiled/chromatica1.js"
+                           :output-dir "resources/public/nodejs/compiled/out"
+                           :pretty-print true
+                           :optimizations :none
+                             ;:optimizations :advanced :simple :whitespace :none
+                           :parallel-build true
+                           ;:npm-deps {"chalk" "2.1.0"}
+                           :install-deps true
+                           :source-map-timestamp true
+                             ;:source-map true
+                           :warnings false}}
+
+
+
+              {:id "app"
                 :source-paths ["src/cljs" "src/cljc" "dev"]
 
                 :figwheel {:on-jsload "chromatica1.system/reset"}
