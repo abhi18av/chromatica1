@@ -38,3 +38,17 @@
 (defn browser-repl []
   (println "(browser-repl) is deprecated, use (cljs-repl)")
   (cljs-repl))
+
+(defn fig-start
+  []
+  (figwheel/start-figwheel!))
+
+(defn fig-stop
+  []
+  (figwheel/stop-figwheel!))
+
+
+;(defn cljs-repl
+;  []
+;  (figwheel/cljs-repl))
+
