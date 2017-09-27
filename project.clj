@@ -7,9 +7,9 @@
   :dependencies [
 
 
-  				 [org.clojure/clojure "1.9.0-beta1"]
+                 [org.clojure/clojure "1.9.0-beta1"]
                  [org.clojure/clojurescript "1.9.908" :scope "provided"]
-                 
+
                  [com.cognitect/transit-clj "0.8.300"]
                  [ring "1.6.2"]
                  [ring/ring-defaults "0.3.1"]
