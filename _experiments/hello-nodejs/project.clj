@@ -33,10 +33,12 @@
              {:id "prod"
               :source-paths ["src"]
               :compiler {
+              :main hello-nodejs.core
                 :output-to "server.js"
                 :output-dir "target/js/compiled/prod"
                 :target :nodejs
-                :optimizations :simple}}]}
+                :source-map-timestamp true
+                :optimizations :none}}]}
 
   :profiles {:dev {:dependencies [[figwheel-sidecar "0.5.13"]
                                   [com.cemerick/piggieback "0.2.2"]]
